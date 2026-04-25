@@ -415,7 +415,7 @@ func TestReset_CreatesConfigDirIfMissing(t *testing.T) {
 	configPath := filepath.Join(configDir, "config")
 	data, err := os.ReadFile(configPath) //nolint:gosec // test
 	require.NoError(t, err)
-	assert.Contains(t, string(data), "claude_command = claude")
+	assert.Contains(t, string(data), "claude_command = codex")
 }
 
 func TestReset_ResetsConfigFile(t *testing.T) {
@@ -448,7 +448,7 @@ func TestReset_ResetsConfigFile(t *testing.T) {
 	// verify config was reset to default
 	data, err = os.ReadFile(configPath) //nolint:gosec // test
 	require.NoError(t, err)
-	assert.Contains(t, string(data), "claude_command = claude")
+	assert.Contains(t, string(data), "claude_command = codex")
 	assert.NotContains(t, string(data), "claude_command = custom")
 }
 

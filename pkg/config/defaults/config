@@ -13,8 +13,8 @@
 # ------------------------------------------------------------------------------
 
 # claude_command: the command to run claude code
-# default: "claude"
-claude_command = claude
+# default: "codex"
+claude_command = codex
 
 # claude_args: arguments passed to claude command
 # --dangerously-skip-permissions: bypass permission prompts for autonomous execution

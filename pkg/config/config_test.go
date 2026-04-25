@@ -195,7 +195,7 @@ func TestLoad_PartialConfig(t *testing.T) {
 	assert.Equal(t, "custom/plans", cfg.PlansDir)
 
 	// missing values filled from embedded defaults
-	assert.Equal(t, "claude", cfg.ClaudeCommand)
+	assert.Equal(t, "codex", cfg.ClaudeCommand)
 	assert.Equal(t, "--dangerously-skip-permissions --output-format stream-json --verbose", cfg.ClaudeArgs)
 	assert.Equal(t, "codex", cfg.CodexCommand)
 	assert.Equal(t, "gpt-5.4", cfg.CodexModel)
@@ -221,7 +221,7 @@ func TestLoad_EmptyConfig(t *testing.T) {
 	require.NoError(t, err)
 
 	// all values should come from embedded defaults
-	assert.Equal(t, "claude", cfg.ClaudeCommand)
+	assert.Equal(t, "codex", cfg.ClaudeCommand)
 	assert.Equal(t, "--dangerously-skip-permissions --output-format stream-json --verbose", cfg.ClaudeArgs)
 	assert.Equal(t, "codex", cfg.CodexCommand)
 	assert.Equal(t, "gpt-5.4", cfg.CodexModel)

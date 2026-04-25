@@ -248,7 +248,7 @@ func run(ctx context.Context, o opts) error {
 		return runWatchOnly(ctx, o, cfg, colors)
 	}
 
-	// check dependencies using configured command (or default "claude")
+	// check dependencies using configured command (or default "codex")
 	if depErr := checkClaudeDep(cfg); depErr != nil {
 		return depErr
 	}
@@ -740,7 +740,7 @@ func openGitService(colors *progress.Colors, vcsCmd string) (*git.Service, error
 func checkClaudeDep(cfg *config.Config) error {
 	claudeCmd := cfg.ClaudeCommand
 	if claudeCmd == "" {
-		claudeCmd = "claude"
+		claudeCmd = "codex"
 	}
 	if _, err := exec.LookPath(claudeCmd); err != nil {
 		return fmt.Errorf("%s not found in PATH", claudeCmd)

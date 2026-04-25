@@ -214,7 +214,7 @@ type streamEvent struct {
 
 // ClaudeExecutor runs claude CLI commands with streaming JSON parsing.
 type ClaudeExecutor struct {
-	Command       string            // command to execute, defaults to "claude"
+	Command       string            // command to execute, defaults to "codex"
 	Args          string            // additional arguments (space-separated), defaults to standard args
 	Model         string            // model override (e.g., "opus", "sonnet", "haiku"); empty = CLI default
 	Effort        string            // reasoning effort override (e.g., "low", "medium", "high", "xhigh", "max"); empty = CLI default
@@ -230,7 +230,7 @@ type ClaudeExecutor struct {
 func (e *ClaudeExecutor) Run(ctx context.Context, prompt string) Result {
 	cmd := e.Command
 	if cmd == "" {
-		cmd = "claude"
+		cmd = "codex"
 	}
 
 	// build args from configured string or use defaults
